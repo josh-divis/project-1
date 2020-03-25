@@ -30,7 +30,7 @@ var quotes = [{
     citation: "Sleeping Beauty",
     year: " " +1959
 }];
-
+// A ramdom array of colors
 var colors = [{
     color: 'blue' }, {
     color: 'green'}, {
@@ -46,6 +46,8 @@ function getRandomQuote() {
     var num = Math.ceil(Math.random() * quotes.length)-1;
     return quotes[num];
 }
+// Uses the Math.random() method to get a number based on the length of the colors array.
+// then returns the selected color.
 getRandomQuote();
 function getRandomColor() {
     var num = Math.ceil(Math.random()*colors.length)-1;
@@ -72,9 +74,10 @@ function printQuote() {
     document.getElementById('quote-box').innerHTML = quoteHTML;
 
  }
+//Makes the printQuote function run at an interval of 12 seconds
  setInterval(() => {
     printQuote();
- }, 12000);// 12000 sets the interval to change the quote at 12 seconds 
+ }, 12000);// 12000 sets the interval to change the quote and color at 12 seconds 
 
 /***
  * click event listener for the print quote button
