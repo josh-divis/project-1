@@ -53,7 +53,7 @@ function getRandomColor() {
 }
 
 // Concatenates the code to produce the quote to the document, then prints the quote.
-setInterval(function printQuote() {
+function printQuote() {
     'use strict';
     var quote = getRandomQuote();  /* Stores our quote so we can use dot notation.*/
     var quoteHTML = '<p class="quote">'+quote.quote+'</p>  <p class="source">'+quote.source;
@@ -67,12 +67,15 @@ setInterval(function printQuote() {
     if (quote.tag) {
         quoteHTML += '<span class="tag">'+quote.tag+'</span>';
     }
-
     quoteHTML += '</p>';// Adds the closing p tag so the browser can read the HTML
     document.body.style.backgroundColor = getRandomColor().color;
     document.getElementById('quote-box').innerHTML = quoteHTML;
- }, 12000); // 12000 sets the interval to change the quote at 12 seconds 
-printQuote(getRandomQuote());
+
+ }
+ setInterval(() => {
+    printQuote();
+ }, 12000);// 12000 sets the interval to change the quote at 12 seconds 
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
