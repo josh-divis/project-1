@@ -43,14 +43,14 @@ var colors = [{
 // then returns the selected quote.
 function getRandomQuote() {
     'use strict';
-    var num = Math.ceil(Math.random() * quotes.length)-1;
+    var num = Math.floor(Math.random() * quotes.length);
     return quotes[num];
 }
 // Uses the Math.random() method to get a number based on the length of the colors array.
 // then returns the selected color.
 getRandomQuote();
 function getRandomColor() {
-    var num = Math.ceil(Math.random()*colors.length)-1;
+    var num = Math.floor(Math.random()*colors.length);
     return colors[num];
 }
 
